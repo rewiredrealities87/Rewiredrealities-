@@ -43,3 +43,11 @@ td, th {
     display: flex;
     gap: 20px;
 }
+body {
+    max-width: 900px;
+    margin: auto;
+}
+
+nav {
+    text-align: center;
+}
