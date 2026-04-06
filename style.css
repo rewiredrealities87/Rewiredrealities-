@@ -1,1 +1,41 @@
+body {
+    font-family: Arial;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
 
+nav {
+    background-color: #ddd;
+    padding: 10px;
+}
+
+nav a {
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: blue;
+}
+
+h1 {
+    color: darkblue;
+}
+
+img {
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 60%;
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid black;
+}
