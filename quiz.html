@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Quiz</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="quiz.js"></script>
+</head>
 
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="topic1.html">HTML</a>
+  <a href="topic2.html">CSS & JavaScript</a>
+  <a href="concepts.html">Concepts</a>
+  <a href="references.html">References</a>
+  <a href="about.html">About</a>
+  <a href="quiz.html">Quiz</a>
+</nav>
+
+<h1>Web Development Quiz</h1>
+
+<form id="quizForm">
+
+<!-- Fill in blank -->
+<p>1. HTML stands for __________.</p>
+<input type="text" id="q1"><br><br>
+
+<!-- Multiple Choice -->
+<p>2. What does CSS do?</p>
+<input type="radio" name="q2" value="a"> Structure<br>
+<input type="radio" name="q2" value="b"> Styling<br>
+<input type="radio" name="q2" value="c"> Database<br><br>
+
+<p>3. What does JavaScript do?</p>
+<input type="radio" name="q3" value="a"> Styling<br>
+<input type="radio" name="q3" value="b"> Interactivity<br>
+<input type="radio" name="q3" value="c"> Storage<br><br>
+
+<p>4. Which is used to select elements?</p>
+<input type="radio" name="q4" value="a"> querySelector<br>
+<input type="radio" name="q4" value="b"> getAll<br>
+<input type="radio" name="q4" value="c"> findElement<br><br>
+
+<!-- Multi Select -->
+<p>5. Which are programming languages? (Select all)</p>
+<input type="checkbox" name="q5" value="a"> HTML<br>
+<input type="checkbox" name="q5" value="b"> JavaScript<br>
+<input type="checkbox" name="q5" value="c"> Python<br><br>
+
+<button type="button" onclick="gradeQuiz()">Submit</button>
+<button type="reset" onclick="resetQuiz()">Reset</button>
+
+</form>
+
+<div id="results"></div>
+
+</body>
+</html>
