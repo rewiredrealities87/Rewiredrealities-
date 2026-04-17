@@ -68,9 +68,8 @@ if (answers.includes("JavaScript") && answers.includes("Python") && answers.leng
 
     document.getElementById("results").innerHTML = `
         <h2 style="color:${result === "PASS" ? "green" : "red"};">${result}</h2>
-        <p><strong>Score: ${score}/${total}</strong></p>
+        <p><strong>Score: ${score}/${total}</strong></p> `;
         ${output}
-    `;
 }
 
 // Reset button
