@@ -1,76 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Rewired Realities</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rewired Realities — IT 3203 Web Development project covering HTML, CSS, and JavaScript fundamentals.">
+  <title>Home | Rewired Realities</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- Navigation -->
-<nav>
-  <a href="index.html">Home</a>
-  <a href="topic1.html">HTML</a>
-  <a href="topic2.html">CSS & JavaScript</a>
-  <a href="concepts.html">Concepts</a>
-  <a href="references.html">References</a>
-  <a href="about.html">About</a>
-  <a href="quiz.html">Quiz</a>
-  
-</nav>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">⚡ Rewired Realities</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="topic1.html">HTML</a></li>
+        <li><a href="topic2.html">CSS &amp; JS</a></li>
+        <li><a href="concepts.html">Concepts</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<h1>Welcome to Rewired Realities</h1>
-<h2>Site Navigation</h2>
-<ul>
-  <li><a href="topic1.html">Learn about HTML</a></li>
-  <li><a href="topic2.html">Learn about CSS & JavaScript</a></li>
-  <li><a href="concepts.html">View Key Concepts</a></li>
-  <li><a href="references.html">References</a></li>
-</ul>
-<div class="container">
+  <section class="hero">
+    <h1>Welcome to <span class="hero-accent">Rewired Realities</span></h1>
+    <p>An IT 3203 coursework project exploring the foundations of modern web development — HTML, CSS, and JavaScript.</p>
+    <a href="topic1.html" class="btn btn-primary">Start Learning</a>
+    <a href="quiz.html" class="btn btn-secondary">Take the Quiz</a>
+  </section>
 
-  <div>
-    <p>This website is used for IT 3203 web development practice and explores HTML, CSS, and JavaScript.</p>
+  <main>
+    <div class="container">
 
-    <h2>Key Terms</h2>
-    <ul>
-      <li>HTML - Structure</li>
-      <li>CSS - Styling</li>
-      <li>JavaScript - Functionality</li>
-    </ul>
-  </div>
+      <section class="section">
+        <div class="section-title">
+          <h2>What You'll Find Here</h2>
+          <div class="accent-bar"></div>
+          <p>Three core technologies every web developer needs to understand.</p>
+        </div>
 
-  <div>
-    <img src="https://via.placeholder.com/300">
-  </div>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon">🏗️</div>
+            <h3>HTML</h3>
+            <p>HyperText Markup Language is the backbone of every webpage. It defines structure through semantic elements like headings, paragraphs, lists, tables, and forms.</p>
+            <a href="topic1.html" class="btn btn-primary" style="font-size:0.85rem;padding:0.45rem 1rem;">Explore HTML →</a>
+          </div>
+          <div class="card">
+            <div class="card-icon">🎨</div>
+            <h3>CSS</h3>
+            <p>Cascading Style Sheets control the visual presentation — layout, colors, fonts, spacing, animations, and responsive behavior across all screen sizes.</p>
+            <a href="topic2.html" class="btn btn-primary" style="font-size:0.85rem;padding:0.45rem 1rem;">Explore CSS →</a>
+          </div>
+          <div class="card">
+            <div class="card-icon">⚙️</div>
+            <h3>JavaScript</h3>
+            <p>JavaScript adds interactivity and dynamic behavior — manipulating the DOM, responding to user events, validating forms, and making web pages come alive.</p>
+            <a href="topic2.html" class="btn btn-primary" style="font-size:0.85rem;padding:0.45rem 1rem;">Explore JS →</a>
+          </div>
+        </div>
+      </section>
 
-</div>
+      <section class="section">
+        <div class="two-col">
+          <div>
+            <h2>About This Project</h2>
+            <p>Rewired Realities is a web development coursework site for <strong>IT 3203</strong> at Kennesaw State University. The project demonstrates proficiency in:</p>
+            <ul>
+              <li>Semantic HTML5 structure and accessibility</li>
+              <li>Responsive CSS with Flexbox, Grid, and <code>@media</code> queries</li>
+              <li>Interactive JavaScript quiz application</li>
+              <li>Mobile-first design principles</li>
+              <li>Professional project organization and code quality</li>
+            </ul>
+            <a href="about.html" class="btn btn-primary" style="margin-top:0.5rem;">About the Author →</a>
+          </div>
+          <div>
+            <h2>Technology Overview</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Technology</th>
+                    <th>Role</th>
+                    <th>File Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>HTML</strong></td><td>Structure &amp; Content</td><td><code>.html</code></td></tr>
+                  <tr><td><strong>CSS</strong></td><td>Style &amp; Layout</td><td><code>.css</code></td></tr>
+                  <tr><td><strong>JavaScript</strong></td><td>Behavior &amp; Interactivity</td><td><code>.js</code></td></tr>
+                  <tr><td><strong>GitHub Pages</strong></td><td>Hosting &amp; Deployment</td><td>—</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <h2>Overview Table</h2>
-<table border="1">
-<tr>
-  <th>Technology</th>
-  <th>Purpose</th>
-</tr>
-<tr>
-  <td>HTML</td>
-  <td>Structure</td>
-</tr>
-<tr>
-  <td>CSS</td>
-  <td>Design</td>
-</tr>
-<tr>
-  <td>JavaScript</td>
-  <td>Interactivity</td>
-</tr>
-</table>
+      <section class="section text-center">
+        <h2>Ready to Test Your Knowledge?</h2>
+        <p class="text-muted" style="margin-bottom:1.5rem;">The quiz covers HTML, CSS, and JavaScript fundamentals covered across this site.</p>
+        <a href="quiz.html" class="btn btn-primary" style="font-size:1.05rem;padding:0.8rem 2rem;">Launch the Quiz ✏️</a>
+      </section>
 
-<footer>
-  <p>This is a class project for IT 3203</p>
-  <a href="https://ksuweb.github.io/IT3203/">Course Website</a>
-</footer>
+    </div>
+  </main>
 
-</body>
-</html>
+  <footer>
+    <p>Rewired Realities &copy; 2025 &mdash; IT 3203 Web Development &mdash; Kennesaw State University</p>
+    <p style="margin-top:0.4rem;"><a href="https://ksuweb.github.io/IT3203/">Course Website</a></p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links  = document.ge
