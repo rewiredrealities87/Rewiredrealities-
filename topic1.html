@@ -1,37 +1,182 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>HTML Basics</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn HTML fundamentals — semantic elements, structure, forms, tables, and best practices.">
+  <title>HTML Fundamentals | Rewired Realities</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- Navigation -->
-<nav>
-  <a href="index.html">Home</a>
-  <a href="topic1.html">HTML</a>
-  <a href="topic2.html">CSS & JavaScript</a>
-  <a href="concepts.html">Concepts</a>
-  <a href="references.html">References</a>
-  <a href="about.html">About</a>
-  <a href="quiz.html">Quiz</a>
-  
-</nav>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">⚡ Rewired Realities</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="topic1.html" class="active">HTML</a></li>
+        <li><a href="topic2.html">CSS &amp; JS</a></li>
+        <li><a href="concepts.html">Concepts</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<h1>HTML Basics</h1>
+  <main>
+    <div class="container">
+      <section class="section">
 
-<p>HTML (HyperText Markup Language) is the standard language used to create web pages. It structures content using elements such as headings, paragraphs, and lists.</p>
+        <div class="section-title">
+          <h1>HTML Fundamentals</h1>
+          <div class="accent-bar"></div>
+          <p class="text-muted">HyperText Markup Language — the structural backbone of every webpage.</p>
+        </div>
 
-<p>HTML works alongside CSS and JavaScript to create fully functional websites. It provides the foundation that all web content is built upon.</p>
+        <div class="concept-block">
+          <h3>What is HTML?</h3>
+          <p>HTML (HyperText Markup Language) is the standard language used to create and structure content on the web. A web browser reads HTML and renders it as a visual webpage. HTML uses <strong>elements</strong> represented by <strong>tags</strong> to describe different types of content.</p>
+          <p>Every HTML document follows this basic skeleton:</p>
+          <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Visible content goes here --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <p>The <code>&lt;head&gt;</code> contains metadata (not visible to users), while the <code>&lt;body&gt;</code> contains everything shown on screen.</p>
+        </div>
 
-<p>Without HTML, a webpage would not have structure. It works together with CSS and JavaScript to create complete web applications.</p>
+        <div class="concept-block">
+          <h3>Semantic HTML5 Elements</h3>
+          <p>Semantic elements clearly describe their purpose to both the browser and developers. They improve accessibility, SEO, and code readability compared to using generic <code>&lt;div&gt;</code> tags everywhere.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Element</th><th>Purpose</th><th>Example Use</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><code>&lt;header&gt;</code></td><td>Introductory content or navigation</td><td>Site logo and nav</td></tr>
+                <tr><td><code>&lt;nav&gt;</code></td><td>Navigation links</td><td>Menu bar</td></tr>
+                <tr><td><code>&lt;main&gt;</code></td><td>Primary page content</td><td>Article body</td></tr>
+                <tr><td><code>&lt;section&gt;</code></td><td>Thematic grouping of content</td><td>Feature section</td></tr>
+                <tr><td><code>&lt;article&gt;</code></td><td>Self-contained content</td><td>Blog post</td></tr>
+                <tr><td><code>&lt;aside&gt;</code></td><td>Tangential content</td><td>Sidebar</td></tr>
+                <tr><td><code>&lt;footer&gt;</code></td><td>Footer information</td><td>Copyright, links</td></tr>
+                <tr><td><code>&lt;figure&gt;</code></td><td>Illustration or diagram</td><td>Image with caption</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-<footer>
-  <p>This is a class project for IT 3203</p>
-  <a href="https://ksuweb.github.io/IT3203/">Course Website</a>
-</footer>
+        <div class="concept-block">
+          <h3>Commonly Used HTML Elements</h3>
+          <div class="card-grid">
+            <div class="card">
+              <h3>Text &amp; Headings</h3>
+              <pre>&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Sub Heading&lt;/h2&gt;
+&lt;p&gt;A paragraph.&lt;/p&gt;
+&lt;strong&gt;Bold text&lt;/strong&gt;
+&lt;em&gt;Italic text&lt;/em&gt;</pre>
+            </div>
+            <div class="card">
+              <h3>Lists</h3>
+              <pre>&lt;!-- Unordered --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Item one&lt;/li&gt;
+  &lt;li&gt;Item two&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- Ordered --&gt;
+&lt;ol&gt;
+  &lt;li&gt;First&lt;/li&gt;
+  &lt;li&gt;Second&lt;/li&gt;
+&lt;/ol&gt;</pre>
+            </div>
+            <div class="card">
+              <h3>Links &amp; Images</h3>
+              <pre>&lt;!-- Link --&gt;
+&lt;a href="https://example.com"
+   target="_blank"&gt;
+  Visit Site
+&lt;/a&gt;
 
+&lt;!-- Image --&gt;
+&lt;img src="photo.jpg"
+     alt="Description"
+     width="300"&gt;</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="concept-block">
+          <h3>HTML Forms</h3>
+          <p>Forms collect user input. The <code>action</code> attribute specifies where form data is sent; <code>method</code> specifies GET or POST. Each input should have a <code>label</code> for accessibility.</p>
+          <pre>&lt;form action="/submit" method="post"&gt;
+
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" required&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email"&gt;
+
+  &lt;label for="level"&gt;Experience:&lt;/label&gt;
+  &lt;select id="level" name="level"&gt;
+    &lt;option value="beginner"&gt;Beginner&lt;/option&gt;
+    &lt;option value="intermediate"&gt;Intermediate&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+
+&lt;/form&gt;</pre>
+        </div>
+
+        <div class="concept-block">
+          <h3>Key HTML Attributes</h3>
+          <p>Attributes provide additional information about elements. They appear inside the opening tag as name="value" pairs.</p>
+          <ul>
+            <li><code>id</code> — unique identifier for an element (used by CSS and JS)</li>
+            <li><code>class</code> — assigns CSS classes (multiple elements can share a class)</li>
+            <li><code>href</code> — URL for anchor links</li>
+            <li><code>src</code> — source file for images and scripts</li>
+            <li><code>alt</code> — alternative text for images (accessibility requirement)</li>
+            <li><code>lang</code> — declares the language of the document (<code>&lt;html lang="en"&gt;</code>)</li>
+            <li><code>data-*</code> — custom data attributes for JavaScript use</li>
+          </ul>
+        </div>
+
+        <div class="text-center mt-3">
+          <a href="topic2.html" class="btn btn-primary">Next: CSS &amp; JavaScript →</a>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Rewired Realities &copy; 2025 &mdash; IT 3203 Web Development &mdash; Kennesaw State University</p>
+    <p style="margin-top:0.4rem;"><a href="https://ksuweb.github.io/IT3203/">Course Website</a></p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    links.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => links.classList.remove('open'))
+    );
+  </script>
 </body>
 </html>
