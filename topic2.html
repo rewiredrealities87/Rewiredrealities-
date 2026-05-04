@@ -1,56 +1,255 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>CSS and JavaScript</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn CSS styling, Flexbox, Grid, media queries, and JavaScript DOM manipulation.">
+  <title>CSS &amp; JavaScript | Rewired Realities</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- Navigation -->
-<nav>
-  <a href="index.html">Home</a>
-  <a href="topic1.html">HTML</a>
-  <a href="topic2.html">CSS & JavaScript</a>
-  <a href="concepts.html">Concepts</a>
-  <a href="references.html">References</a>
-  <a href="about.html">About</a>
-   <a href="quiz.html">Quiz</a>
-</nav>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">⚡ Rewired Realities</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="topic1.html">HTML</a></li>
+        <li><a href="topic2.html" class="active">CSS &amp; JS</a></li>
+        <li><a href="concepts.html">Concepts</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<h1>CSS and JavaScript</h1>
+  <main>
+    <div class="container">
+      <section class="section">
 
-<p>CSS (Cascading Style Sheets) is used to control the visual appearance of a website. It allows developers to apply colors, layouts, fonts, and spacing to HTML elements.</p>
+        <div class="section-title">
+          <h1>CSS &amp; JavaScript</h1>
+          <div class="accent-bar"></div>
+          <p class="text-muted">Style your pages with CSS and add interactivity with JavaScript.</p>
+        </div>
 
-<p>JavaScript is used to add interactivity to web pages. It allows users to click buttons, submit forms, and interact with dynamic content.</p>
+        <div class="concept-block">
+          <h3>What is CSS?</h3>
+          <p>CSS (Cascading Style Sheets) controls how HTML elements look on screen. CSS rules follow a <strong>selector { property: value; }</strong> pattern. The word "cascading" means styles are applied in priority order: browser defaults → external stylesheet → internal style → inline style.</p>
+          <pre>/* Select all paragraphs and style them */
+p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
 
-<h2>Key Differences</h2>
-<ul>
-  <li>CSS controls design and layout</li>
-  <li>JavaScript controls behavior and interactivity</li>
-</ul>
+/* Class selector */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
 
-<h2>Example Table</h2>
-<table border="1">
-<tr>
-  <th>Technology</th>
-  <th>Purpose</th>
-</tr>
-<tr>
-  <td>CSS</td>
-  <td>Styling</td>
-</tr>
-<tr>
-  <td>JavaScript</td>
-  <td>Interactivity</td>
-</tr>
-</table>
+/* ID selector */
+#hero {
+  background: navy;
+  color: white;
+  padding: 4rem 1rem;
+}</pre>
+        </div>
 
-<footer>
-  <p>This is a class project for IT 3203</p>
-  <a href="https://ksuweb.github.io/IT3203/">Course Website</a>
-</footer>
+        <div class="concept-block">
+          <h3>The CSS Box Model</h3>
+          <p>Every HTML element is a rectangular box. The box model describes how space is calculated around an element:</p>
+          <ul>
+            <li><strong>Content</strong> — the actual text or image</li>
+            <li><strong>Padding</strong> — transparent space inside the border</li>
+            <li><strong>Border</strong> — a line around the padding</li>
+            <li><strong>Margin</strong> — transparent space outside the border</li>
+          </ul>
+          <pre>/* box-sizing: border-box makes width include padding + border */
+* {
+  box-sizing: border-box;
+}
 
+.element {
+  width: 300px;
+  padding: 20px;
+  border: 2px solid #ccc;
+  margin: 16px auto;
+}</pre>
+        </div>
+
+        <div class="concept-block">
+          <h3>CSS Flexbox</h3>
+          <p>Flexbox is a one-dimensional layout system for arranging items in a row or column. It makes aligning and distributing space between items much easier than older CSS techniques.</p>
+          <pre>/* Flex container */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Flex item — take up remaining space */
+.flex-grow {
+  flex: 1;
+}
+
+/* Column direction on mobile */
+.card-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}</pre>
+        </div>
+
+        <div class="concept-block">
+          <h3>CSS Grid</h3>
+          <p>Grid is a two-dimensional layout system that allows precise control over rows and columns simultaneously. It's ideal for page layouts and card grids.</p>
+          <pre>/* 3-column card grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Responsive: auto-fit adjusts column count automatically */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Item spanning multiple columns */
+.featured {
+  grid-column: span 2;
+}</pre>
+        </div>
+
+        <div class="concept-block">
+          <h3>Responsive Design with Media Queries</h3>
+          <p>Media queries apply CSS rules only when certain conditions are met — most commonly, minimum or maximum screen widths. This is the foundation of <strong>responsive web design</strong> and <strong>mobile-first development</strong>.</p>
+          <pre>/* Mobile first: default styles apply to all screens */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Tablet: 2 columns at 600px and wider */
+@media (min-width: 600px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: 3 columns at 900px and wider */
+@media (min-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Hide element on mobile, show on desktop */
+.desktop-only {
+  display: none;
+}
+@media (min-width: 768px) {
+  .desktop-only {
+    display: block;
+  }
+}</pre>
+        </div>
+
+        <div class="concept-block">
+          <h3>JavaScript Fundamentals</h3>
+          <p>JavaScript is the programming language of the web. It runs in the browser and allows you to respond to user actions, modify the DOM, validate forms, and much more.</p>
+          <pre>// Variables
+const name = "Rewired";
+let score  = 0;
+
+// Functions
+function greet(person) {
+  return `Hello, ${person}!`;
+}
+console.log(greet("World"));
+
+// Arrow function
+const double = (n) => n * 2;
+
+// Conditional
+if (score >= 80) {
+  console.log("Great job!");
+} else {
+  console.log("Keep practicing.");
+}
+
+// Loop
+const items = ["HTML", "CSS", "JavaScript"];
+items.forEach(item => {
+  console.log(item);
+});</pre>
+        </div>
+
+        <div class="concept-block">
+          <h3>DOM Manipulation</h3>
+          <p>The Document Object Model (DOM) is a tree representation of the HTML page. JavaScript can read and modify any element, attribute, or content in the DOM.</p>
+          <pre>// Select elements
+const btn     = document.getElementById('myBtn');
+const heading = document.querySelector('h1');
+const cards   = document.querySelectorAll('.card');
+
+// Change content and style
+heading.textContent = "Updated Heading";
+heading.style.color = "#00c2a8";
+
+// Add / remove CSS classes
+btn.classList.add('active');
+btn.classList.remove('hidden');
+btn.classList.toggle('open');
+
+// Listen for events
+btn.addEventListener('click', () => {
+  alert('Button clicked!');
+});
+
+// Create and insert new elements
+const newP = document.createElement('p');
+newP.textContent = "Dynamically added paragraph.";
+document.body.appendChild(newP);</pre>
+        </div>
+
+        <div class="text-center mt-3">
+          <a href="concepts.html" class="btn btn-primary">Next: Key Concepts →</a>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Rewired Realities &copy; 2025 &mdash; IT 3203 Web Development &mdash; Kennesaw State University</p>
+    <p style="margin-top:0.4rem;"><a href="https://ksuweb.github.io/IT3203/">Course Website</a></p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    links.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => links.classList.remove('open'))
+    );
+  </script>
 </body>
 </html>
