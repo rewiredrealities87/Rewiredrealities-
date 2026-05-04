@@ -1,42 +1,187 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Key Concepts</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Key web development concepts including responsive design, accessibility, performance, and best practices.">
+  <title>Key Concepts | Rewired Realities</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- Navigation -->
-<nav>
-  <a href="index.html">Home</a>
-  <a href="topic1.html">HTML</a>
-  <a href="topic2.html">CSS & JavaScript</a>
-  <a href="concepts.html">Concepts</a>
-  <a href="references.html">References</a>
-  <a href="about.html">About</a>
-  <a href="quiz.html">Quiz</a>
-</nav>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">⚡ Rewired Realities</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="topic1.html">HTML</a></li>
+        <li><a href="topic2.html">CSS &amp; JS</a></li>
+        <li><a href="concepts.html" class="active">Concepts</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<h1>Key Concepts</h1>
+  <main>
+    <div class="container">
+      <section class="section">
 
-<ul>
-  <li><strong>HTML:</strong> Provides the structure of web pages.</li>
-  <li><strong>CSS:</strong> Controls the design and layout of web pages.</li>
-  <li><strong>JavaScript:</strong> Adds interactivity to web pages.</li>
-  <li><strong>DOM:</strong> Represents the structure of a webpage that JavaScript can manipulate.</li>
-  <li><strong>Responsive Design:</strong> Ensures websites work on all screen sizes.</li>
-</ul>
+        <div class="section-title">
+          <h1>Key Web Development Concepts</h1>
+          <div class="accent-bar"></div>
+          <p class="text-muted">Essential principles every web developer should understand.</p>
+        </div>
 
-<p>These concepts are essential for understanding how modern websites function. Each plays a role in creating structure, style, and functionality.</p>
+        <div class="card-grid mb-3">
 
-<p>These concepts work together to form the foundation of modern web development and allow developers to build functional and visually appealing websites.</p>
+          <div class="card">
+            <div class="card-icon">📱</div>
+            <h3>Responsive Design</h3>
+            <p>A design approach ensuring web pages look and function well on all devices — phones, tablets, and desktops. Built using fluid grids, flexible images, and CSS media queries.</p>
+            <span class="tag">Mobile-First</span>
+            <span class="tag">Media Queries</span>
+            <span class="tag">Fluid Grid</span>
+          </div>
 
-<footer>
-  <p>This is a class project for IT 3203</p>
-  <a href="https://ksuweb.github.io/IT3203/">Course Website</a>
-</footer>
+          <div class="card">
+            <div class="card-icon">♿</div>
+            <h3>Web Accessibility (a11y)</h3>
+            <p>Designing websites usable by people with disabilities. Includes using semantic HTML, providing alt text for images, ensuring keyboard navigation, and sufficient color contrast.</p>
+            <span class="tag">WCAG 2.1</span>
+            <span class="tag">ARIA</span>
+            <span class="tag">Screen Readers</span>
+          </div>
 
+          <div class="card">
+            <div class="card-icon">🌐</div>
+            <h3>How the Web Works</h3>
+            <p>A browser sends an HTTP request to a server; the server responds with HTML, CSS, and JavaScript files. The browser parses these files and renders the visible page.</p>
+            <span class="tag">HTTP</span>
+            <span class="tag">DNS</span>
+            <span class="tag">Client-Server</span>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🔍</div>
+            <h3>SEO Basics</h3>
+            <p>Search Engine Optimization improves a site's ranking in search results. Key factors include semantic HTML, descriptive page titles and meta descriptions, fast load times, and mobile-friendliness.</p>
+            <span class="tag">Meta Tags</span>
+            <span class="tag">Headings</span>
+            <span class="tag">Alt Text</span>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">⚡</div>
+            <h3>Web Performance</h3>
+            <p>Fast sites improve user experience and SEO. Performance techniques include minimizing file sizes, compressing images, deferring non-critical JavaScript, and using browser caching.</p>
+            <span class="tag">Minification</span>
+            <span class="tag">Lazy Loading</span>
+            <span class="tag">CDN</span>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🔒</div>
+            <h3>Web Security Basics</h3>
+            <p>Foundational security practices include using HTTPS, sanitizing user input to prevent XSS attacks, validating form data on both client and server sides, and keeping dependencies updated.</p>
+            <span class="tag">HTTPS</span>
+            <span class="tag">XSS</span>
+            <span class="tag">Validation</span>
+          </div>
+
+        </div>
+
+        <div class="concept-block">
+          <h3>Mobile-First Design Explained</h3>
+          <p>Mobile-first means writing default CSS styles for small screens first, then using <code>@media (min-width: ...)</code> queries to progressively enhance the layout for larger screens. This is the opposite of "desktop-first" design, and it's now the industry standard because most web traffic comes from mobile devices.</p>
+          <pre>/* Mobile-first: base styles for small screens */
+.container {
+  padding: 0 1rem;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Enhance for tablet (600px and up) */
+@media (min-width: 600px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Enhance for desktop (900px and up) */
+@media (min-width: 900px) {
+  .container { padding: 0 2rem; }
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+}</pre>
+        </div>
+
+        <div class="concept-block">
+          <h3>The DOM Tree</h3>
+          <p>When a browser loads an HTML file, it creates the <strong>Document Object Model (DOM)</strong> — an in-memory tree structure representing every element on the page. JavaScript interacts with this tree to dynamically read, add, remove, or modify elements and their attributes without reloading the page.</p>
+          <pre>// Selecting elements
+const main    = document.querySelector('main');
+const heading = main.querySelector('h1');
+
+// Modifying content
+heading.textContent = "DOM Updated!";
+heading.classList.add('highlight');
+
+// Event-driven interaction
+document.querySelector('#myBtn').addEventListener('click', () => {
+  heading.style.color = 'teal';
+});</pre>
+        </div>
+
+        <div class="concept-block">
+          <h3>Glossary of Key Terms</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Term</th><th>Definition</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><code>DOM</code></td><td>Document Object Model — the browser's in-memory representation of the HTML page</td></tr>
+                <tr><td><code>API</code></td><td>Application Programming Interface — a defined way for software to communicate</td></tr>
+                <tr><td><code>Viewport</code></td><td>The visible area of the browser window</td></tr>
+                <tr><td><code>Breakpoint</code></td><td>A specific screen width at which layout changes via a media query</td></tr>
+                <tr><td><code>Selector</code></td><td>A CSS pattern that targets specific HTML elements to style</td></tr>
+                <tr><td><code>Specificity</code></td><td>The algorithm browsers use to decide which CSS rule wins when multiple rules apply</td></tr>
+                <tr><td><code>Event</code></td><td>A user or browser action (click, scroll, keypress) that JavaScript can respond to</td></tr>
+                <tr><td><code>Git/GitHub</code></td><td>Version control system and platform for hosting and collaborating on code</td></tr>
+                <tr><td><code>GitHub Pages</code></td><td>A free static site hosting service built into GitHub repositories</td></tr>
+                <tr><td><code>Semantic HTML</code></td><td>Using elements that convey meaning about the content they contain</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="text-center mt-3">
+          <a href="references.html" class="btn btn-primary">View References →</a>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Rewired Realities &copy; 2025 &mdash; IT 3203 Web Development &mdash; Kennesaw State University</p>
+    <p style="margin-top:0.4rem;"><a href="https://ksuweb.github.io/IT3203/">Course Website</a></p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    links.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => links.classList.remove('open'))
+    );
+  </script>
 </body>
 </html>
