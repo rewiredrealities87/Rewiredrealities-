@@ -1,34 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>About</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About the author of Rewired Realities — IT 3203 web development coursework project.">
+  <title>About | Rewired Realities</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- Navigation -->
-<nav>
-  <a href="index.html">Home</a>
-  <a href="topic1.html">HTML</a>
-  <a href="topic2.html">CSS & JavaScript</a>
-  <a href="concepts.html">Concepts</a>
-  <a href="references.html">References</a>
-  <a href="about.html">About</a>
-  <a href="quiz.html">Quiz</a> <!-- THIS IS WHERE IT GOES -->
-</nav>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">⚡ Rewired Realities</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="topic1.html">HTML</a></li>
+        <li><a href="topic2.html">CSS &amp; JS</a></li>
+        <li><a href="concepts.html">Concepts</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<h1>About Me</h1>
+  <main>
+    <div class="container">
+      <section class="section">
 
-<p>I am passionate about technology and currently building my skills in networking, IT support, and web development. This project reflects my learning and growth in these areas.</p>
+        <div class="section-title">
+          <h1>About This Project</h1>
+          <div class="accent-bar"></div>
+        </div>
 
-<p>This website was created as part of my IT 3203 course to demonstrate my understanding of HTML, CSS, and web design principles.</p>
+        <div class="two-col mb-3">
+          <div>
+            <div class="concept-block">
+              <h3>About the Author</h3>
+              <p>I am a student at Kennesaw State University with a passion for technology, networking, IT support, and web development. This project reflects my learning and growth as I continue building skills in the field.</p>
+              <p>My interests include exploring how technology shapes communication and problem-solving in the modern world — which is exactly what inspired the name <strong>Rewired Realities</strong>.</p>
+            </div>
 
-<footer>
-  <p>This is a class project for IT 3203</p>
-  <a href="https://ksuweb.github.io/IT3203/">Course Website</a>
-</footer>
+            <div class="concept-block">
+              <h3>About This Site</h3>
+              <p>Rewired Realities was created as a capstone project for <strong>IT 3203 — Web Development</strong>. The goal was to build a fully functional, responsive, multi-page website demonstrating proficiency in:</p>
+              <ul>
+                <li>Semantic HTML5 document structure</li>
+                <li>CSS styling — layout, typography, color, and selectors</li>
+                <li>Responsive design with media queries (mobile-first)</li>
+                <li>JavaScript interactivity (quiz application)</li>
+                <li>Clean, organized, commented code</li>
+                <li>Deployment via GitHub Pages</li>
+              </ul>
+            </div>
+          </div>
 
+          <div>
+            <div class="concept-block">
+              <h3>Project Stats</h3>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Item</th><th>Detail</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Course</td><td>IT 3203 — Web Development</td></tr>
+                    <tr><td>University</td><td>Kennesaw State University</td></tr>
+                    <tr><td>Technologies</td><td>HTML5, CSS3, JavaScript</td></tr>
+                    <tr><td>HTML Pages</td><td>7 pages</td></tr>
+                    <tr><td>CSS File</td><td>style.css (single external sheet)</td></tr>
+                    <tr><td>JavaScript</td><td>quiz.js (external file)</td></tr>
+                    <tr><td>References</td><td>12 sourced and annotated</td></tr>
+                    <tr><td>Hosted On</td><td>GitHub Pages</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="concept-block">
+              <h3>What I Learned</h3>
+              <p>Building this project taught me how much goes into creating even a simple website. Some key takeaways:</p>
+              <ul>
+                <li><strong>Mobile-first CSS</strong> is much cleaner than trying to override desktop styles for smaller screens.</li>
+                <li><strong>CSS Grid and Flexbox</strong> together handle virtually any layout challenge.</li>
+                <li><strong>Semantic HTML</strong> matters — it makes code readable and improves accessibility.</li>
+                <li><strong>JavaScript DOM manipulation</strong> is powerful but requires understanding how the browser parses and renders HTML first.</li>
+                <li>Good code organization and comments pay off when you return to a project after a break.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="quiz.html" class="btn btn-primary">Test Your Knowledge →</a>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Rewired Realities &copy; 2025 &mdash; IT 3203 Web Development &mdash; Kennesaw State University</p>
+    <p style="margin-top:0.4rem;"><a href="https://ksuweb.github.io/IT3203/">Course Website</a></p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    links.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => links.classList.remove('open'))
+    );
+  </script>
 </body>
 </html>
