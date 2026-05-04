@@ -1,60 +1,198 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Quiz</title>
-<link rel="stylesheet" href="style.css">
-<script defer src="quiz.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Test your HTML, CSS, and JavaScript knowledge with the Rewired Realities web development quiz.">
+  <title>Quiz | Rewired Realities</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="topic1.html">HTML</a>
-  <a href="topic2.html">CSS & JavaScript</a>
-  <a href="concepts.html">Concepts</a>
-  <a href="references.html">References</a>
-  <a href="about.html">About</a>
-  <a href="quiz.html">Quiz</a>
-</nav>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">⚡ Rewired Realities</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="topic1.html">HTML</a></li>
+        <li><a href="topic2.html">CSS &amp; JS</a></li>
+        <li><a href="concepts.html">Concepts</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="quiz.html" class="active">Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<h1>Web Development Quiz</h1>
+  <main>
+    <div class="container">
+      <section class="section">
 
-<form id="quizForm">
+        <div class="section-title">
+          <h1>Web Development Quiz ✏️</h1>
+          <div class="accent-bar"></div>
+          <p class="text-muted">10 questions covering HTML, CSS, and JavaScript. Answer all questions then click Submit.</p>
+        </div>
 
-<!-- Fill in blank -->
-<p>1. HTML stands for __________.</p>
-<input type="text" id="q1"><br><br>
+        <div class="quiz-wrapper">
 
-<!-- Multiple Choice -->
-<p>2. What does CSS do?</p>
-<input type="radio" name="q2" value="a"> Structure<br>
-<input type="radio" name="q2" value="b"> Styling<br>
-<input type="radio" name="q2" value="c"> Database<br><br>
+          <div class="quiz-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10">
+            <div class="quiz-progress-bar" id="progressBar" style="width: 0%"></div>
+          </div>
 
-<p>3. What does JavaScript do?</p>
-<input type="radio" name="q3" value="a"> Styling<br>
-<input type="radio" name="q3" value="b"> Interactivity<br>
-<input type="radio" name="q3" value="c"> Storage<br><br>
+          <form id="quizForm" novalidate>
 
-<p>4. Which is used to select elements?</p>
-<input type="radio" name="q4" value="a"> querySelector<br>
-<input type="radio" name="q4" value="b"> getAll<br>
-<input type="radio" name="q4" value="c"> findElement<br><br>
+            <div class="question-card" id="qcard-1">
+              <div class="q-label">Question 1 of 10 — Fill in the Blank</div>
+              <p>HTML stands for <strong>H</strong>yper<strong>T</strong>ext ___________.</p>
+              <div class="options">
+                <input type="text" id="q1" name="q1" placeholder="Type your answer here…" autocomplete="off">
+              </div>
+            </div>
 
-<!-- Multi Select -->
-<p>5. Which are programming languages? (Select all)</p>
-<input type="checkbox" name="q5" value="a"> HTML<br>
-<input type="checkbox" name="q5" value="b"> JavaScript<br>
-<input type="checkbox" name="q5" value="c"> Python<br><br>
+            <div class="question-card" id="qcard-2">
+              <div class="q-label">Question 2 of 10 — Multiple Choice</div>
+              <p>What is the purpose of CSS?</p>
+              <div class="options" id="opts-q2">
+                <label><input type="radio" name="q2" value="a"> Define the structure of a webpage</label>
+                <label><input type="radio" name="q2" value="b"> Control the visual presentation and styling</label>
+                <label><input type="radio" name="q2" value="c"> Store data in a database</label>
+                <label><input type="radio" name="q2" value="d"> Handle server-side processing</label>
+              </div>
+            </div>
 
-<button type="button" onclick="gradeQuiz()">Submit</button>
-<button type="reset" onclick="resetQuiz()">Reset</button>
+            <div class="question-card" id="qcard-3">
+              <div class="q-label">Question 3 of 10 — Multiple Choice</div>
+              <p>Which HTML element is used to link an external CSS stylesheet?</p>
+              <div class="options" id="opts-q3">
+                <label><input type="radio" name="q3" value="a"> <code>&lt;style&gt;</code></label>
+                <label><input type="radio" name="q3" value="b"> <code>&lt;script&gt;</code></label>
+                <label><input type="radio" name="q3" value="c"> <code>&lt;link&gt;</code></label>
+                <label><input type="radio" name="q3" value="d"> <code>&lt;css&gt;</code></label>
+              </div>
+            </div>
 
-</form>
+            <div class="question-card" id="qcard-4">
+              <div class="q-label">Question 4 of 10 — Multiple Choice</div>
+              <p>Which CSS property makes a container use Flexbox layout?</p>
+              <div class="options" id="opts-q4">
+                <label><input type="radio" name="q4" value="a"> <code>layout: flex</code></label>
+                <label><input type="radio" name="q4" value="b"> <code>display: flex</code></label>
+                <label><input type="radio" name="q4" value="c"> <code>position: flex</code></label>
+                <label><input type="radio" name="q4" value="d"> <code>flex: true</code></label>
+              </div>
+            </div>
 
-<div id="results"></div>
-<script src="quiz.js"></script>
+            <div class="question-card" id="qcard-5">
+              <div class="q-label">Question 5 of 10 — Multiple Choice</div>
+              <p>What does a CSS <code>@media</code> query do?</p>
+              <div class="options" id="opts-q5">
+                <label><input type="radio" name="q5" value="a"> Imports media files like images and videos</label>
+                <label><input type="radio" name="q5" value="b"> Applies styles only when certain screen conditions are met</label>
+                <label><input type="radio" name="q5" value="c"> Plays audio on a webpage</label>
+                <label><input type="radio" name="q5" value="d"> Links to an external CSS file</label>
+              </div>
+            </div>
+
+            <div class="question-card" id="qcard-6">
+              <div class="q-label">Question 6 of 10 — Multiple Choice</div>
+              <p>Which JavaScript method selects the first matching element from the DOM?</p>
+              <div class="options" id="opts-q6">
+                <label><input type="radio" name="q6" value="a"> <code>document.getElement()</code></label>
+                <label><input type="radio" name="q6" value="b"> <code>document.findFirst()</code></label>
+                <label><input type="radio" name="q6" value="c"> <code>document.querySelector()</code></label>
+                <label><input type="radio" name="q6" value="d"> <code>document.selectElement()</code></label>
+              </div>
+            </div>
+
+            <div class="question-card" id="qcard-7">
+              <div class="q-label">Question 7 of 10 — Multiple Choice</div>
+              <p>In HTML, the <code>alt</code> attribute on an <code>&lt;img&gt;</code> element is used for:</p>
+              <div class="options" id="opts-q7">
+                <label><input type="radio" name="q7" value="a"> Setting the image file path</label>
+                <label><input type="radio" name="q7" value="b"> Providing alternative text for accessibility and SEO</label>
+                <label><input type="radio" name="q7" value="c"> Controlling image width</label>
+                <label><input type="radio" name="q7" value="d"> Adding a tooltip on hover</label>
+              </div>
+            </div>
+
+            <div class="question-card" id="qcard-8">
+              <div class="q-label">Question 8 of 10 — Multiple Choice</div>
+              <p>Which of the following is the correct CSS selector to style an element with <code>id="hero"</code>?</p>
+              <div class="options" id="opts-q8">
+                <label><input type="radio" name="q8" value="a"> <code>.hero { }</code></label>
+                <label><input type="radio" name="q8" value="b"> <code>hero { }</code></label>
+                <label><input type="radio" name="q8" value="c"> <code>#hero { }</code></label>
+                <label><input type="radio" name="q8" value="d"> <code>*hero { }</code></label>
+              </div>
+            </div>
+
+            <div class="question-card" id="qcard-9">
+              <div class="q-label">Question 9 of 10 — Select All That Apply</div>
+              <p>Which of the following are <strong>semantic</strong> HTML5 elements? (Select all that apply)</p>
+              <div class="options" id="opts-q9">
+                <label><input type="checkbox" name="q9" value="article"> <code>&lt;article&gt;</code></label>
+                <label><input type="checkbox" name="q9" value="div"> <code>&lt;div&gt;</code></label>
+                <label><input type="checkbox" name="q9" value="nav"> <code>&lt;nav&gt;</code></label>
+                <label><input type="checkbox" name="q9" value="span"> <code>&lt;span&gt;</code></label>
+                <label><input type="checkbox" name="q9" value="footer"> <code>&lt;footer&gt;</code></label>
+              </div>
+            </div>
+
+            <div class="question-card" id="qcard-10">
+              <div class="q-label">Question 10 of 10 — Multiple Choice</div>
+              <p>What does the <code>viewport</code> meta tag do?</p>
+              <div class="options" id="opts-q10">
+                <label><input type="radio" name="q10" value="a"> Sets the background color of the page</label>
+                <label><input type="radio" name="q10" value="b"> Tells the browser how to control the page's width and scaling on different devices</label>
+                <label><input type="radio" name="q10" value="c"> Links to the site's favicon</label>
+                <label><input type="radio" name="q10" value="d"> Defines the character encoding of the page</label>
+              </div>
+            </div>
+
+            <div class="quiz-btn-row">
+              <button type="button" class="btn btn-primary" id="submitBtn" onclick="gradeQuiz()">Submit Quiz</button>
+              <button type="button" class="btn" style="background:#e8f0fe;color:#1a3a5c;" id="resetBtn" onclick="resetQuiz()">Reset</button>
+            </div>
+
+          </form>
+
+          <div id="quiz-results">
+            <h2>Quiz Complete! 🎉</h2>
+            <div class="score-display" id="scoreDisplay">0/10</div>
+            <p class="score-msg" id="scoreMsg">Loading…</p>
+            <div class="quiz-btn-row">
+              <button class="btn btn-primary" onclick="resetQuiz()">Try Again</button>
+              <a href="concepts.html" class="btn" style="background:#e8f0fe;color:#1a3a5c;">Review Concepts</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Rewired Realities &copy; 2025 &mdash; IT 3203 Web Development &mdash; Kennesaw State University</p>
+    <p style="margin-top:0.4rem;"><a href="https://ksuweb.github.io/IT3203/">Course Website</a></p>
+  </footer>
+
+  <script src="quiz.js"></script>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    links.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => links.classList.remove('open'))
+    );
+  </script>
+
 </body>
 </html>
