@@ -1,38 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>References</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resources and references used to research HTML, CSS, JavaScript, and web development best practices.">
+  <title>References | Rewired Realities</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- Navigation -->
-<nav>
-  <a href="index.html">Home</a>
-  <a href="topic1.html">HTML</a>
-  <a href="topic2.html">CSS & JavaScript</a>
-  <a href="concepts.html">Concepts</a>
-  <a href="references.html">References</a>
-  <a href="about.html">About</a>
-  <a href="quiz.html">Quiz</a>
-</nav>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">⚡ Rewired Realities</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="topic1.html">HTML</a></li>
+        <li><a href="topic2.html">CSS &amp; JS</a></li>
+        <li><a href="concepts.html">Concepts</a></li>
+        <li><a href="references.html" class="active">References</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<h1>References and Resources</h1>
+  <main>
+    <div class="container">
+      <section class="section">
 
-<ul>
-  <li><a href="https://www.w3schools.com/">W3Schools - Web Development Tutorials</a></li>
-  <li><a href="https://developer.mozilla.org/">MDN Web Docs</a></li>
-  <li><a href="https://www.geeksforgeeks.org/">GeeksforGeeks</a></li>
-</ul>
+        <div class="section-title">
+          <h1>References &amp; Resources</h1>
+          <div class="accent-bar"></div>
+          <p class="text-muted">The following sources were used to research and support the content throughout this site. Each reference includes a brief explanation of how it was used.</p>
+        </div>
 
-<p>These resources were used to understand and research the concepts of HTML, CSS, and JavaScript used throughout this project.</p>
+        <ol class="ref-list">
 
-<footer>
-  <p>This is a class project for IT 3203</p>
-  <a href="https://ksuweb.github.io/IT3203/">Course Website</a>
-</footer>
+          <li class="ref-item">
+            <div class="ref-num">Reference 01</div>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener">MDN Web Docs — HTML Reference</a>
+            <p class="ref-comment">The MDN HTML reference was the primary resource for understanding semantic elements, form controls, and HTML5 attributes. It was consulted extensively for the HTML topic page and the concepts glossary.</p>
+          </li>
 
+          <li class="ref-item">
+            <div class="ref-num">Reference 02</div>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener">MDN Web Docs — CSS Reference</a>
+            <p class="ref-comment">Used to research CSS properties including Flexbox, Grid, custom properties (CSS variables), and media query syntax. MDN's interactive examples were especially useful for understanding layout behavior.</p>
+          </li>
+
+          <li class="ref-item">
+            <div class="ref-num">Reference 03</div>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">MDN Web Docs — JavaScript Reference</a>
+            <p class="ref-comment">The authoritative reference for JavaScript language features, DOM API methods such as querySelector, addEventListener, and classList. Referenced throughout the quiz.js development.</p>
+          </li>
+
+          <li class="ref-item">
+            <div class="ref-num">Reference 04</div>
+            <a href="https://www.w3schools.com/html/" target="_blank" rel="noopener">W3Schools — HTML Tutorial</a>
+            <p class="ref-comment">W3Schools provided beginner-friendly examples and Try It Yourself editors that helped test HTML concepts quickly. Used as a supplemental reference alongside MDN for the HTML topic page.</p>
+          </li>
+
+          <li class="ref-item">
+            <div class="ref-num">Reference 05</div>
+            <a href="https://www.w3schools.com/css/" target="_blank" rel="noopener">W3Schools — CSS Tutorial</a>
+            <p class="ref-comment">Used to understand the CSS Box Model, CSS selectors, and CSS transitions. The visual diagrams on W3Schools were helpful for conceptualizing how padding, margin, and border interact.</p>
+          </li>
+
+          <li class="ref-item">
+            <div class="ref-num">Reference 06</div>
+            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener">CSS-Tricks — A Complete Guide to Flexbox</a>
+            <p class="ref-comment">This guide is considered the definitive visual reference for CSS Flexbox. It was used to correctly implement the responsive navigation bar and the two-column layout on the homepage, particularly for align-items and justify-content properties.</p>
+          </li>
+
+          <li class="ref-item">
+            <div class="ref-num">Reference 07</div>
+            <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank" rel="noopener">CSS-Tricks — A Complete Guide to Grid</a>
+            <p class="ref-comment">Referenced when building the responsive card grid layout. The guide clearly explains grid-template-columns, repeat(), fr units, and the auto-fit keyword used throughout this project.</p>
+          </li>
+
+          <li class="ref-item">
+            <div class="ref-num">Reference 08</div>
+            <a href="https://web.dev/responsive-web-design-basics/" target="_blank" rel="noopener">web.dev — Responsive Web Design Basics</a>
+            <p class="ref-comment">Google's web.dev platform provided the foundational reading on responsive design principles, including the viewport meta tag, mobile-first strategy, and fluid layouts. Directly influenced the CSS media query structure used in this project.</p>
+          </li>
+
+          <li class="ref-item">
+            <div class="ref-num">Reference 09</div>
+            <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/" target="_blank" rel="noopener">W3C WAI — Introduction to Web Accessibility</a>
+            <p class="ref-comment">The W3C Web Accessibility Initiative guidelines informed decisions such as adding lang attributes, alt text on images, ARIA labels on interactive elements, and ensuring sufficient color contrast throughout the site.</p>
+          </li>
+
+          <li class="ref-item">
+            <div class="ref-num">Reference 10</div>
+            <a href="https://docs.github.com/en/pages" target="_blank" rel="noopener">GitHub Docs — GitHub Pages</a>
+            <p class="ref-comment">Used to understand how to enable and configure GitHub Pages for static site hosting. Referenced for setting up the deployment branch and understanding how the live URL is generated from the repository.</p>
+          </li>
+
+          <li class="ref-item">
+            <div class="ref-num">Reference 11</div>
+            <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries" target="_blank" rel="noopener">MDN — Using Media Queries</a>
+            <p class="ref-comment">This specific MDN guide covers media query syntax in depth, including min-width, max-width, and the mobile-first approach. Directly applied to the CSS breakpoints implemented in style.css.</p>
+          </li>
+
+          <li class="ref-item">
+            <div class="ref-num">Reference 12</div>
+            <a href="https://javascript.info/" target="_blank" rel="noopener">The Modern JavaScript Tutorial — javascript.info</a>
+            <p class="ref-comment">An in-depth open-source JavaScript course covering language fundamentals and DOM interaction. Used as a reference when writing the quiz grading logic, event listeners, and dynamic DOM updates in quiz.js.</p>
+          </li>
+
+        </ol>
+
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Rewired Realities &copy; 2025 &mdash; IT 3203 Web Development &mdash; Kennesaw State University</p>
+    <p style="margin-top:0.4rem;"><a href="https://ksuweb.github.io/IT3203/">Course Website</a></p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    links.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => links.classList.remove('open'))
+    );
+  </script>
 </body>
 </html>
